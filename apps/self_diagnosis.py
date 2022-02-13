@@ -68,7 +68,7 @@ def render_diagnosis_page():
             data.append(symptom)
     if len(data)>0:
         disease_hash,get_disease = create_disease_hash()
-        model = load_model('C:/Users/Sharad/Desktop/files/ML/test_hack/apps/rf.h5')
+        model = load_model('./apps/rf.h5')
         st.header("You have entered the following symptoms: {}".format(",".join(data)))
         st.header("Your may have: {}".format(get_disease[predict(model,data)[0]]))
     
